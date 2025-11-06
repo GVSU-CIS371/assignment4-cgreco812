@@ -132,3 +132,6 @@ dist
 
 
 backup
+
+src/firebase.ts
+src/firebase
