@@ -77,8 +77,8 @@
               name="recipes"
               :id="`r${recipe.name}`"
               :value="recipe"
-              v-model="selectedRecipe"
-              @change="beverageStore.showBeverage(selectedRecipe)"
+              v-model="beverageStore.currentBeverage"
+              @change="beverageStore.showBeverage()"
             />
             {{ recipe.name }}
           </label>
@@ -91,10 +91,8 @@
 
 import Beverage from "./components/Beverage.vue";
 import { useBeverageStore } from "./stores/beverageStore";
-import { ref } from 'vue';
 const beverageStore = useBeverageStore();
 beverageStore.init();
-const selectedRecipe = ref(null)
 </script>
 
 <style lang="scss">

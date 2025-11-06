@@ -108,15 +108,16 @@ export const useBeverageStore = defineStore("BeverageStore", {
 
       this.beverages.push(newBeverage);
       setDoc(docRef, newBeverage);
+      this.currentBeverage = newBeverage;
       
       },
 
-    showBeverage(recipe:BeverageType | null) {
-      this.currentName = recipe!.name
-      this.currentTemp = recipe!.temp;
-      this.currentBase = recipe!.base;
-      this.currentCreamer = recipe!.creamer;
-      this.currentSyrup = recipe!.syrup;
+    showBeverage() {
+      this.currentName = this.currentBeverage!.name
+      this.currentTemp = this.currentBeverage!.temp;
+      this.currentBase = this.currentBeverage!.base;
+      this.currentCreamer = this.currentBeverage!.creamer;
+      this.currentSyrup = this.currentBeverage!.syrup;
     },
   },
 });
